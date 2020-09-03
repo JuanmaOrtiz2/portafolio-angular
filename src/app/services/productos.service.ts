@@ -21,7 +21,7 @@ export class ProductosService {
     return new Promise((resolve,reject)=>{
       this.http.get('https://angular-html-546f1.firebaseio.com/productos_idx.json')
       .subscribe((resp:Producto[])=>{
-        console.log(resp);
+        
         this.productos = resp;
   
         //setTimeout(()=>{
@@ -60,7 +60,7 @@ export class ProductosService {
     this.productos.forEach(prod => {
       if(prod.categoria.indexOf(termino)>=0 || prod.titulo.indexOf(termino) >= 0){
         this.productosFiltrado.push(prod);
-        console.log(this.productosFiltrado);
+        
       }
     })
   }

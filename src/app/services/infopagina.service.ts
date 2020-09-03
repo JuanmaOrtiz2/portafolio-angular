@@ -24,8 +24,6 @@ export class InfopaginaService {
       .subscribe((resp:InfoPagina) => { //resp saca todo el archivo JSON para poder seleccionar.
         this.cargada = true;
         this.info = resp;
-        console.log(resp);
-        console.log(resp['twitter']);
       });
   }
 
