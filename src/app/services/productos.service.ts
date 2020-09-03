@@ -24,9 +24,9 @@ export class ProductosService {
         console.log(resp);
         this.productos = resp;
   
-        setTimeout(()=>{
+        //setTimeout(()=>{
           this.cargando=false;
-        },2000);
+        //},2000);
         resolve();
         
       });
@@ -50,9 +50,8 @@ export class ProductosService {
     }else{
       this.filtrarProductos(termino);
     }
-    this.productosFiltrado= this.productos.filter(producto => {
-      return true;
-    })
+    
+    
   }
 
   private filtrarProductos(termino: string){
@@ -61,6 +60,7 @@ export class ProductosService {
     this.productos.forEach(prod => {
       if(prod.categoria.indexOf(termino)>=0 || prod.titulo.indexOf(termino) >= 0){
         this.productosFiltrado.push(prod);
+        console.log(this.productosFiltrado);
       }
     })
   }
